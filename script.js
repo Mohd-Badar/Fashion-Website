@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
     let cart = JSON.parse(localStorage.getItem("badarStudioCart")) || [];
 
-    const cartLink = document.querySelector('nav ul li a[href="cart"]');
-    const aboutLink = document.querySelector('nav ul li a[href="about"]');
-    const contactLink = document.querySelector('nav ul li a[href="contact"]');
+    const cartLink = document.getElementById("cartNavBtn");
+    const aboutLink = document.querySelector('nav ul li a[href="#about"]');
+    const contactLink = document.querySelector('nav ul li a[href="#contact"]');
     const footer = document.querySelector('.main-footer');
     const productsSection = document.querySelector('.products-section');
     const shopButtons = document.querySelectorAll('.hero-btn, .banner-btn');
