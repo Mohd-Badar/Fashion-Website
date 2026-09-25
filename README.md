@@ -28,7 +28,7 @@ A modern fashion e-commerce website built using HTML, CSS, and JavaScript.
 
 
 ### 🏠 Hero Section
-![Home Page](screenshots/heroSection.png)
+![Home Page](heroSection.png)
 
 ### 🛍️ Products Section
 ![Products](screenshots/productSection.png)
