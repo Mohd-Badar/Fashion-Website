@@ -25,4 +25,19 @@ A modern fashion e-commerce website built using HTML, CSS, and JavaScript.
 ---
 
 ## 📸 Screenshots
-(Add screenshots of website here)
+
+
+### 🏠 Hero Section
+![Home Page](screenshots/heroSection.png)
+
+### 🛍️ Products Section
+![Products](screenshots/productSection.png)
+
+### 🛒 Cart System
+![Cart](screenshots/cartSystem.png)
+
+### 🛍️ Products Detail
+![Products Detail](screenshots/productsDetail.png)
+
+### New Arrivals
+![New Arrivals](screenshots/newArrivals.png)
