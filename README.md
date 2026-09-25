@@ -31,13 +31,13 @@ A modern fashion e-commerce website built using HTML, CSS, and JavaScript.
 ![Home Page](heroSection.png)
 
 ### 🛍️ Products Section
-![Products](screenshots/productSection.png)
+![Products](productSection.png)
 
 ### 🛒 Cart System
-![Cart](screenshots/cartSystem.png)
+![Cart](cartSystem.png)
 
 ### 🛍️ Products Detail
-![Products Detail](screenshots/productDetail.png)
+![Products Detail](productDetail.png)
 
 ### New Arrivals
-![New Arrivals](screenshots/newArrivals.png)
+![New Arrivals](newArrivals.png)
