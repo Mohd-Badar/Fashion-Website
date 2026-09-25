@@ -37,7 +37,7 @@ A modern fashion e-commerce website built using HTML, CSS, and JavaScript.
 ![Cart](screenshots/cartSystem.png)
 
 ### 🛍️ Products Detail
-![Products Detail](screenshots/productsDetail.png)
+![Products Detail](screenshots/productDetail.png)
 
 ### New Arrivals
 ![New Arrivals](screenshots/newArrivals.png)
