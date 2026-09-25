@@ -3,213 +3,302 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Website</title>
+    <title>BADAR STUDIO | Fashion</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </head>
 <body>
 
-    <header>
-        <div>
-            <nav>
-                 <div class="brand-container">
-                        <img src="logo.png" alt="Brand Logo" class="brand-logo">
-                        <span class="brand-name">BADAR STUDIO</span>
-                </div> 
+<header>
+    <div>
+        <nav>
+            <div class="brand-container">
+                <img src="logo.png" alt="BADAR STUDIO Logo" class="brand-logo">
+                <span class="brand-name">BADAR STUDIO</span>
+            </div> 
 
-                <div class="menu-toggle">&#9776;</div>
+            <div class="menu-toggle">&#9776;</div>
 
-                <ul>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#cart" id="cartNavBtn">Cart (0)</a></li>
-                </ul>
-            </nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#upcoming">New Arrivals</a></li>
+                <li><a href="#cart" id="cartNavBtn">Cart (0)</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero-section">
+    <div class="hero-content">
+        <span class="hero-subheading">New Collection 2026</span>
+        <h1 class="hero-heading">ELEVATE YOUR<br>EVERYDAY STYLE</h1>
+        <p class="hero-description">Discover premium fabrics, modern fits, and timeless designs crafted just for you.</p>
+        <a href="#shop" class="hero-btn">Shop Now</a>
+    </div>
+</section>
+
+<section class="products-section" id="shop">
+    <h2 class="section-title">TRENDING NOW</h2>
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="fittedCottonShirt.jpeg" alt="Fitted Cotton Shirt">
+            <h3> Fitted Cotton Shirt </h3>
+            <p class="price"> ₹999</p>
+            <button class="buy-button">Select Options</button>
         </div>
-    </header>
-   
-    <section class="hero-section">
-        <div class="hero-content">
-            <span class="hero-subheading">New Collection 2026</span>
-            <h1 class="hero-heading">ELEVATE YOUR<br>EVERYDAY STYLE</h1>
-            <p class="hero-description">Discover premium fabrics, modern fits, and timeless designs crafted just for you.</p>
-            <a href="#shop" class="hero-btn">Shop Now</a>
+
+        <div class="product-card">
+            <img src="baggyFitJeans.jpeg" alt="Baggy Fit Jeans">
+            <h3> Baggy Jeans </h3>
+            <p class="price"> ₹1,499</p>
+            <button class="buy-button">Select Options</button>
         </div>
-    </section>
 
-    <section class="products-section" id="shop">
-        <h2 class="section-title">TRENDING NOW</h2>
-        <div class="product-grid">
-            <div class="product-card">
-                <img src="fittedCottonShirt.jpeg" alt="casual shirt">
-                <h3> Fitted Cotton Shirt </h3>
-                <p class="price"> ₹999</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="baggyFitJeans.jpeg" alt="casual shirt">
-                <h3> Baggy Jeans </h3>
-                <p class="price"> ₹1,499</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="lightToneCasualShrit.avif" alt="casual shirt">
-                <h3> Casual Shirt </h3>
-                <p class="price"> ₹899</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="calssicSneakers.jpeg" alt="casual shirt">
-                <h3> Sneakers </h3>
-                <p class="price"> ₹2,999</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="scottOvalSunglasses.webp" alt="sunGlasses">
-                <h3> SCOTT OVAL SUN GLASSES </h3>
-                <p class="price"> ₹3,499</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="printedCottonShirt.avif" alt="printedCottonShirt">
-                <h3> PRINTED COTTON SHIRT </h3>
-                <p class="price"> ₹1,499</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="casualCottonShirt.webp" alt="casual shirt">
-                <h3> CASUAL COTTON SHIRT </h3>
-                <p class="price"> ₹2,299</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
-
-            <div class="product-card">
-                <img src="denielKleinWatch.webp" alt="denielKleinWatch">
-                <h3> Deniel Klein Watch </h3>
-                <p class="price"> ₹12,999</p>
-                <button class="buy-button"> Add to Cart</button>
-            </div>
+        <div class="product-card">
+            <img src="lightToneCasualShrit.avif" alt="Light Tone Casual Shirt">
+            <h3> Casual Shirt </h3>
+            <p class="price"> ₹899</p>
+            <button class="buy-button">Select Options</button>
         </div>
-    </section>
 
-    <div id="cartModal" class="cart-modal">
-        <div class="cart-content">
-            <div class="cart-header">
-                <h2>Your Cart</h2>
-                <span class="close-cart">&times;</span>
+        <div class="product-card">
+            <img src="redtapeCasualShirt.webp" alt="Red Tape Casual Shirt">
+            <h3> Red Tape Casual Shirt </h3>
+            <p class="price"> ₹848</p>
+            <button class="buy-button">Select Options</button>
+        </div>
+
+        <div class="product-card">
+            <img src="scottOvalSunglasses.webp" alt="Scott Oval Sunglasses">
+            <h3> SCOTT OVAL SUN GLASSES </h3>
+            <p class="price"> ₹3,499</p>
+            <button class="buy-button">Select Options</button>
+        </div>
+
+        <div class="product-card">
+            <img src="printedCottonShirt.avif" alt="Printed Cotton Shirt">
+            <h3> PRINTED COTTON SHIRT </h3>
+            <p class="price"> ₹1,499</p>
+            <button class="buy-button">Select Options</button>
+        </div>
+
+        <div class="product-card">
+            <img src="casualCottonShirt.webp" alt="Casual Cotton Shirt">
+            <h3> CASUAL COTTON SHIRT </h3>
+            <p class="price"> ₹2,299</p>
+            <button class="buy-button">Select Options</button>
+        </div>
+
+        <div class="product-card">
+            <img src="levi'sMensJacket.jpeg" alt="Levi's Mens Jacket">
+            <h3> Levi's Mens Jacket </h3>
+            <p class="price"> ₹1,660</p>
+            <button class="buy-button">Select Options</button>
+        </div>
+    </div>
+</section>
+
+<section class="hero-section2">
+    <div class="hero-content2"></div>
+</section>
+
+<section class="products-section" id="upcoming">
+    <h2 class="section-title">NEW ARRIVALS (DROPPING SOON)</h2>
+    <div class="product-grid">
+        <div class="product-card upcoming-card">
+            <span class="coming-soon-badge">COMING SOON</span>
+            <img src="oversizedStreetHoodie.jpeg" alt="Oversized Street Hoodie">
+            <h3> Oversized Street Hoodie </h3>
+            <p class="launch-date">Releasing Next Week</p>
+        </div>
+
+        <div class="product-card upcoming-card">
+            <span class="coming-soon-badge">COMING SOON</span>
+            <img src="vintagePrintedTee.webp" alt="Vintage Printed Tee">
+            <h3> Vintage Printed Tee </h3>
+            <p class="launch-date">Releasing Next Week</p>
+        </div>
+
+        <div class="product-card upcoming-card">
+            <span class="coming-soon-badge">COMING SOON</span>
+            <img src="cargoBaggyPants.jpeg" alt="Cargo Baggy Pants">
+            <h3> Cargo Baggy Pants </h3>
+            <p class="launch-date">Releasing Next Week</p>
+        </div>
+
+        <div class="product-card upcoming-card">
+            <span class="coming-soon-badge">COMING SOON</span>
+            <img src="denimOvershirt.jpeg" alt="Denim Overshirt">
+            <h3> Denim Overshirt </h3>
+            <p class="launch-date">Releasing Next Week</p>
+        </div>
+    </div>
+</section>
+
+<section class="reviews-section">
+    <h2 class="section-title">WHAT OUR CUSTOMERS SAY</h2>
+    <div class="reviews-grid">
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Fitting aur quality ekdum top-notch hai. Fitting shirt aur baggy jeans ka combo best laga!"</p>
+            <h4>- Naman.</h4>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Delivery fast thi aur fabric bohot comfortable hai. Definitely ordering again."</p>
+            <h4>- Krishna.</h4>
+        </div>
+        <div class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>"Badar Studio ka collection ekdum unique aur modern aesthetic wala hai."</p>
+            <h4>- Kunal.</h4>
+        </div>
+    </div>
+</section>
+
+<section class="promo-banner">
+    <h2>Special Off-Season Sale!</h2>
+    <p>Get up to 30% OFF on all fitted shirts & baggy jeans.</p>
+    <button class="banner-btn">Shop Now</button>
+</section>
+
+<section class="features-section">
+    <div class="feature-box">
+        <h3>Free Shipping</h3>
+        <p>On all orders above ₹999</p>
+    </div>
+    <div class="feature-box">
+        <h3>Easy Returns</h3>
+        <p>7-day hassle-free return policy</p>
+    </div>
+    <div class="feature-box">
+        <h3>100% Original</h3>
+        <p>Guaranteed authentic products</p>
+    </div>
+</section>
+
+<div id="cartModal" class="cart-modal">
+    <div class="cart-content">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <span class="close-cart">&times;</span>
+        </div>
+        <div class="cart-items" id="cartItems"></div>
+        <div class="cart-footer">
+            <h3>Total: <span id="cartTotal">₹0</span></h3>
+            <button class="proceed-btn" id="openCheckoutBtn">Proceed to Checkout</button>
+        </div>
+    </div>
+</div>
+
+<div id="checkoutModal" class="cart-modal">
+    <div class="checkout-content">
+        <div class="cart-header">
+            <h2>Checkout - BADAR STUDIO</h2>
+            <span class="close-checkout">&times;</span>
+        </div>
+        <form id="checkoutForm">
+            <div class="checkout-body">
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    <div class="summary-row">
+                        <span>Total Items:</span>
+                        <strong id="summaryItemCount">0</strong>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total Payable Amount:</span>
+                        <strong id="summaryTotalAmount">₹0</strong>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" placeholder="Enter your number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" rows="3" placeholder="House/Flat No., Street, City, Pincode" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Option</label>
+                    <select id="paymentMethod">
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="upi">UPI / GPay / PhonePe</option>
+                        <option value="card">Credit Card / Debit Card</option>
+                    </select>
+                </div>
             </div>
-            <div class="cart-items" id="cartItems"></div>
+
             <div class="cart-footer">
-                <h3>Total: <span id="cartTotal">₹0</span></h3>
-                <button class="proceed-btn" id="openCheckoutBtn">Proceed to Checkout</button>
+                <button type="submit" class="place-order-btn">Confirm & Place Your Order</button>
             </div>
+        </form>
+    </div>
+</div>
+
+<div id="productModal" class="cart-modal">
+    <div class="checkout-content">
+        <div class="cart-header">
+            <h2 id="modalTitle">Product Details</h2>
+            <span class="close-product">&times;</span>
+        </div>
+        <div class="product-modal-body">
+            <img id="modalImg" src="" alt="Product Image" class="modal-product-img">
+            <p class="price" id="modalPrice">₹0</p>
+            
+            <div class="option-group">
+                <label>Select Color:</label>
+                <div class="color-options">
+                    <span class="color-btn active" data-color="Default">Default</span>
+                    <span class="color-btn" data-color="Black">Black</span>
+                    <span class="color-btn" data-color="White">White</span>
+                    <span class="color-btn" data-color="Navy">Navy</span>
+                </div>
+            </div>
+
+            <div class="option-group">
+                <label>Select Size:</label>
+                <div class="size-options">
+                    <span class="size-btn" data-size="S">S</span>
+                    <span class="size-btn active" data-size="M">M</span>
+                    <span class="size-btn" data-size="L">L</span>
+                    <span class="size-btn" data-size="XL">XL</span>
+                </div>
+            </div>
+
+            <button class="buy-button" id="modalAddToCartBtn">Add to Cart</button>
         </div>
     </div>
+</div>
 
-    <div id="checkoutModal" class="cart-modal">
-        <div class="checkout-content">
-            <div class="cart-header">
-                <h2>Checkout - BADAR STUDIO</h2>
-                <span class="close-checkout">&times;</span>
-            </div>
-            <form id="checkoutForm">
-                <div class="checkout-body">
-                    <div class="order-summary">
-                        <h3>Order Summary</h3>
-                        <div class="summary-row">
-                            <span>Total Items:</span>
-                            <strong id="summaryItemCount">0</strong>
-                        </div>
-                        <div class="summary-row total">
-                            <span>Total Payable Amount:</span>
-                            <strong id="summaryTotalAmount">₹0</strong>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="fullName">Full Name</label>
-                        <input type="text" id="fullName" placeholder="Enter your name" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" placeholder="Enter your number" required>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="address">Shipping Address</label>
-                        <textarea id="address" rows="3" placeholder="House/Flat No., Street, City, Pincode" required></textarea>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="paymentMethod">Payment Option</label>
-                        <select id="paymentMethod">
-                            <option value="cod">Cash on Delivery</option>
-                            <option value="upi">UPI / GPay / PhonePe</option>
-                            <option value="card">Credit Card / Debit Card</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="cart-footer">
-                    <button type="submit" class="place-order-btn">Confirm & Place Your Order</button>
-                </div>
-            </form>
+<footer class="main-footer">
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#upcoming">New Arrivals</a></li>
+                <li><a href="#">Track Order</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h4>Customer Care</h4>
+            <ul>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return & Refund</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
         </div>
     </div>
+    <p class="copyright">&copy; 2026 BADAR STUDIO. All rights reserved.</p>
+</footer>
 
-    <section class="hero-section2">
-        <div class="hero-content2"></div>
-    </section>
-
-    <section class="promo-banner">
-        <h2>Special Off-Season Sale!</h2>
-        <p>Get up to 30% OFF on all fitted shirts & baggy jeans.</p>
-        <button class="banner-btn">Shop Now</button>
-    </section>
-
-    <section class="features-section">
-        <div class="feature-box">
-            <h3>Free Shipping</h3>
-            <p>On all orders above ₹999</p>
-        </div>
-        <div class="feature-box">
-            <h3>Easy Returns</h3>
-            <p>7-day hassle-free return policy</p>
-        </div>
-        <div class="feature-box">
-            <h3>100% Original</h3>
-            <p>Guaranteed authentic products</p>
-        </div>
-    </section>
-
-    <footer class="main-footer">
-        <div class="footer-container">
-            <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Track Order</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h4>Customer Care</h4>
-                <ul>
-                    <li><a href="#">Shipping Policy</a></li>
-                    <li><a href="#">Return & Refund</a></li>
-                    <li><a href="#">FAQs</a></li>
-                </ul>
-            </div>
-        </div>
-        <p class="copyright">&copy; 2026 BADAR STUDIO. All rights reserved.</p>
-    </footer>
-    
 </body>
 </html>

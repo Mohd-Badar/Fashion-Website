@@ -10,12 +10,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const cartModal = document.getElementById("cartModal");
     const checkoutModal = document.getElementById("checkoutModal");
+    const productModal = document.getElementById("productModal");
+
     const cartItemsContainer = document.getElementById("cartItems");
     const cartTotalElement = document.getElementById("cartTotal");
+
     const closeCartBtn = document.querySelector(".close-cart");
     const closeCheckoutBtn = document.querySelector(".close-checkout");
+    const closeProductBtn = document.querySelector(".close-product");
+
     const openCheckoutBtn = document.getElementById("openCheckoutBtn");
     const checkoutForm = document.getElementById("checkoutForm");
+
+    const modalTitle = document.getElementById("modalTitle");
+    const modalImg = document.getElementById("modalImg");
+    const modalPrice = document.getElementById("modalPrice");
+    const modalAddToCartBtn = document.getElementById("modalAddToCartBtn");
+
+    let currentSelectedProduct = null;
+    let selectedColor = "Default";
+    let selectedSize = "M";
 
     const updateCart = () => {
         localStorage.setItem("badarStudioCart", JSON.stringify(cart));
@@ -52,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <img src="${item.image}" alt="${item.title}" class="cart-item-img">
                     <div class="cart-item-details">
                         <h4>${item.title}</h4>
+                        <small>Color: ${item.color} | Size: ${item.size}</small>
                         <p>₹${item.price.toLocaleString('en-IN')} x ${item.quantity}</p>
                     </div>
                     <button class="remove-btn" data-index="${index}">&times;</button>
@@ -75,55 +90,89 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateCart();
 
-    const buyButtons = document.querySelectorAll(".buy-button");
-    buyButtons.forEach((button) => {
-        button.addEventListener("click", (event) => {
-            const card = event.target.closest(".product-card");
-            const title = card.querySelector("h3").innerText.trim();
-            const priceText = card.querySelector(".price").innerText.replace(/[^0-9]/g, "");
-            const price = parseInt(priceText, 10);
-            const image = card.querySelector("img").getAttribute("src");
+    const openProductModal = (card) => {
+        const title = card.querySelector("h3").innerText.trim();
+        const priceText = card.querySelector(".price").innerText.replace(/[^0-9]/g, "");
+        const price = parseInt(priceText, 10);
+        const image = card.querySelector("img").getAttribute("src");
 
-            const existingIndex = cart.findIndex((item) => item.title === title);
+        currentSelectedProduct = { title, price, image };
+
+        modalTitle.textContent = title;
+        modalImg.src = image;
+        modalPrice.textContent = `₹${price.toLocaleString('en-IN')}`;
+
+        selectedColor = "Default";
+        selectedSize = "M";
+        document.querySelectorAll(".color-btn").forEach(b => b.classList.remove("active"));
+        document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+        document.querySelector('.color-btn[data-color="Default"]').classList.add("active");
+        document.querySelector('.size-btn[data-size="M"]').classList.add("active");
+
+        if (productModal) productModal.style.display = "flex";
+    };
+
+    const productCards = document.querySelectorAll(".product-card");
+    productCards.forEach((card) => {
+        card.style.cursor = "pointer";
+        card.addEventListener("click", () => {
+            openProductModal(card);
+        });
+    });
+
+    document.querySelectorAll(".color-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".color-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedColor = btn.getAttribute("data-color");
+        });
+    });
+
+    document.querySelectorAll(".size-btn").forEach(btn => {
+        btn.addEventListener("click", () => {
+            document.querySelectorAll(".size-btn").forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
+            selectedSize = btn.getAttribute("data-size");
+        });
+    });
+
+    if (modalAddToCartBtn) {
+        modalAddToCartBtn.addEventListener("click", () => {
+            if (!currentSelectedProduct) return;
+
+            const { title, price, image } = currentSelectedProduct;
+
+            const existingIndex = cart.findIndex(
+                (item) => item.title === title && item.color === selectedColor && item.size === selectedSize
+            );
 
             if (existingIndex > -1) {
                 cart[existingIndex].quantity += 1;
             } else {
-                cart.push({ title, price, image, quantity: 1 });
+                cart.push({ title, price, image, color: selectedColor, size: selectedSize, quantity: 1 });
             }
 
             updateCart();
 
-            const originalText = button.textContent;
-            button.textContent = "Added ✓";
-            button.style.backgroundColor = "#5AC8FA";
-            button.style.color = "#FFFFFF";
+            modalAddToCartBtn.textContent = "Added ✓";
+            modalAddToCartBtn.style.backgroundColor = "#5AC8FA";
 
             setTimeout(() => {
-                button.textContent = originalText;
-                button.style.backgroundColor = "#111111";
-                button.style.color = "#FFFFFF";
-            }, 1200);
-        });
-    });
-
-    if (cartLink) {
-        cartLink.addEventListener("click", (e) => {
-            e.preventDefault();
-            if (cartModal) cartModal.style.display = "flex";
+                modalAddToCartBtn.textContent = "Add to Cart";
+                modalAddToCartBtn.style.backgroundColor = "#111111";
+                if (productModal) productModal.style.display = "none";
+            }, 800);
         });
     }
 
-    if (closeCartBtn) {
-        closeCartBtn.addEventListener("click", () => {
-            if (cartModal) cartModal.style.display = "none";
-        });
-    }
+    if (cartLink) cartLink.addEventListener("click", (e) => { e.preventDefault(); if (cartModal) cartModal.style.display = "flex"; });
+    if (closeCartBtn) closeCartBtn.addEventListener("click", () => { if (cartModal) cartModal.style.display = "none"; });
+    if (closeCheckoutBtn) closeCheckoutBtn.addEventListener("click", () => { if (checkoutModal) checkoutModal.style.display = "none"; });
+    if (closeProductBtn) closeProductBtn.addEventListener("click", () => { if (productModal) productModal.style.display = "none"; });
 
     if (openCheckoutBtn) {
         openCheckoutBtn.addEventListener("click", () => {
             if (cart.length === 0) return;
-
             const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
             const totalAmount = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
@@ -135,19 +184,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    if (closeCheckoutBtn) {
-        closeCheckoutBtn.addEventListener("click", () => {
-            if (checkoutModal) checkoutModal.style.display = "none";
-        });
-    }
-
     if (checkoutForm) {
         checkoutForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const name = document.getElementById("fullName").value;
-            
             alert(`Thank you for your order, ${name}! Your order has been placed successfully.`);
-            
             cart = [];
             updateCart();
             checkoutForm.reset();
@@ -158,6 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.addEventListener("click", (e) => {
         if (e.target === cartModal) cartModal.style.display = "none";
         if (e.target === checkoutModal) checkoutModal.style.display = "none";
+        if (e.target === productModal) productModal.style.display = "none";
     });
 
     const scrollToFooter = (e) => {
@@ -175,13 +217,12 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-const menuToggle = document.querySelector(".menu-toggle");
-const navMenu = document.querySelector("nav ul");
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector("nav ul");
 
-if (menuToggle && navMenu) {
-    menuToggle.addEventListener("click", () => {
-        navMenu.classList.toggle("active");
-    });
-}
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", () => {
+            navMenu.classList.toggle("active");
+        });
+    }
 });
-
