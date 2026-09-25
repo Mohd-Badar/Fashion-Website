@@ -4,11 +4,6 @@ A modern fashion e-commerce website built using HTML, CSS, and JavaScript.
 
 ---
 
-## 🚀 Live Demo
-Mohd-Badar.github.io/Fashion-Website/
-
----
-
 ## 🛠️ Tech Stack
 - HTML
 - CSS
