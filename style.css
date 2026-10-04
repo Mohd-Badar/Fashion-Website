@@ -59,7 +59,7 @@ nav ul li a {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(splashImage.png) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/splashImage.png) no-repeat center center/cover;
     height: 75vh;
     margin: 20px;
     border-radius: 30px;
@@ -267,7 +267,18 @@ nav ul li a {
 }
 
 .hero-section2 {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(comingSoon.jpg) no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/comingSoon.jpg) no-repeat center center/cover;
+    height: 75vh;
+    margin: 40px 20px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    padding: 0 8%;
+    color: #FFFFFF;
+}
+
+.hero-section3 {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(images/newCollection.avif) no-repeat center center/cover;
     height: 75vh;
     margin: 40px 20px;
     border-radius: 30px;
